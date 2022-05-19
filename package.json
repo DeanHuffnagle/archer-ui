@@ -1,0 +1,30 @@
+{
+  "name": "archer-ui",
+  "version": "1.0.0",
+  "description": "A UI library for react-native",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist/ && prettier --write src/ && yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs"
+  },
+  "author": "Dean Huffnagle",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.34",
+    "@types/react": "^18.0.9",
+    "@types/react-native": "^0.67.7",
+    "prettier": "^2.6.2",
+    "react": "^18.1.0",
+    "react-native": "^0.68.2",
+    "typescript": "^4.6.4"
+  },
+  "peerDependencies": {
+    "react": "^18.1.0",
+    "react-native": "^0.68.2"
+  }
+}
