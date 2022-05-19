@@ -8,9 +8,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "rm -rf dist/ && prettier --write src/ && yarn build:esm && yarn build:cjs",
+    "build": "rm -rf dist/ && prettier --write src/ && npm run-script build:esm && npm run-script build:cjs && npm run-script deploy:examples",
     "build:esm": "tsc",
-    "build:cjs": "tsc --module CommonJS --outDir dist/cjs"
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
+    "deploy:examples": "npm pack && cd examples && npm install ../archer-ui-1.0.0.tgz"
   },
   "author": "Dean Huffnagle",
   "license": "MIT",
